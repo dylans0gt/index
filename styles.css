@@ -1,0 +1,476 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Fira Sans', Arial, sans-serif;
+    line-height: 1.6;
+    background-color: rgb(0, 0, 0);
+    color: white;
+    font-size: 16px; /* Base font size */
+    animation: shiny 3s ease-in forwards;
+}
+
+embed {
+    display: block;
+    width: 100%; /* Adjust width to make it responsive */
+    border: none; /* Remove default border */
+}
+
+
+/* Hide the first embed element on mobile devices */
+@media only screen and (max-width: 767px) {
+    #portfolio embed {
+        display: none;
+    }
+}
+
+/* Hide the second embed element on desktop devices */
+@media only screen and (min-width: 768px) {
+    #services embed {
+        display: none;
+    }
+}
+
+h1, h2, h3 {
+    font-family: 'Fira Mono', sans-serif;
+    font-weight: 700;
+}
+
+h1 {
+    font-size: 2.5rem; /* Responsive unit */
+}
+
+h3 {
+    font-size: 1.5rem; /* Responsive unit */
+}
+
+p {
+    font-size: 1rem; /* Responsive unit */
+}
+
+header {
+    background: rgba(5, 6, 28, 0.487);
+    color: rgb(255, 255, 255);
+    padding: 1rem 0;
+    transform: translateX(-100%);
+    animation: slideFadeIn 0.5s ease-in forwards;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1.25rem;
+    position: relative;
+}
+
+.logo img {
+    width: 5.5rem;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li {
+    margin-left: 1.25rem;
+}
+
+/* When hamburger menu is clicked */
+.nav-links.active {
+    display: flex; /* Or display block depending on your layout */
+    flex-direction: column; /* Ensure it stacks vertically */
+}
+
+/* Media query for mobile devices */
+@media (max-width: 768px) {
+    .hamburger {
+        display: flex; /* Show hamburger menu */
+    }
+
+    .nav-links {
+        position: absolute;
+        top: 60px; /* Adjust if needed */
+        left: 0;
+        right: 0;
+        background: rgb(1, 2, 39);
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.5s ease-out;
+    }
+
+    .nav-links.active {
+        max-height: 500px; /* Adjust to fit your content */
+    }
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1rem; /* Responsive unit */
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.hamburger span {
+    height: 0.1875rem;
+    width: 1.5625rem;
+    background: #fff;
+    margin-bottom: 0.25rem;
+    border-radius: 0.125rem;
+}
+
+main {
+    padding: 1.25rem;
+    text-align: center;
+    transform: translateY(-100%);
+    animation: slideFadeIn 0.5s ease-in forwards;
+}
+
+footer {
+    background: rgba(5, 6, 28, 0.487);
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
+    margin-top: 1.25rem;
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        background: rgb(1, 2, 39);
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.5s ease-out;
+    }
+
+    .nav-links.active {
+        max-height: 300px; /* Adjust this value based on the content height */
+    }
+
+    .nav-links li {
+        margin: 0.9375rem 0;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+}
+
+/* Flex container for #main-logo and .home sections */
+
+.curved {
+    
+}
+#main-logo-home-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.25rem;
+    gap: 1rem; /* Adjust gap as needed */
+    padding-bottom: 100px;
+}
+
+#home p {
+    max-width: 80%;
+}
+
+
+#main-logo, #home {
+    flex: 2;
+    padding: 1rem;
+}
+
+/* Styles for #main-logo section */
+#main-logo {
+    text-align: center; /* Centers the image horizontally within the section */
+}
+
+#main-logo img {
+    width: 100%;
+    max-width: 60.5rem; /* Ensures the image does not grow beyond its original size */
+    height: auto; /* Maintains the aspect ratio */
+    filter: brightness(210%);
+    animation: appear 2s ease-in;
+}
+
+.typing-container {
+    display: inline-block;
+    overflow: hidden;
+    border-right: .15em solid rgb(39, 46, 106); /* Adjust the cursor style */
+    white-space: nowrap;
+    margin: 0 auto;
+    letter-spacing: .15em;
+    animation: typing 2.5s steps(30, end), blink-caret .75s step-end infinite;
+    max-width: 100%; /* Adjust the maximum width as needed */
+    font-size: 1rem; /* Default font size */
+    text-align: center; /* Center text horizontally */
+}
+
+/* Container for centering */
+.typing-container-wrapper {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    height: 100vh; /* Full viewport height */
+}
+
+/* Media query for mobile devices */
+@media only screen and (max-width: 600px) {
+    .typing-container {
+        font-size: 0.75rem; /* Adjust font size for smaller screens */
+        white-space: normal; /* Allow text to wrap */
+        word-wrap: break-word; /* Break long words if needed */
+        max-width: 100%; /* Ensure it does not exceed screen width */
+    }
+}
+
+@media (max-width: 1200px) {
+    #main-logo img {
+        max-width: 60.25rem; /* Adjusts the max width for smaller screens */
+    }
+}
+
+@media (max-width: 768px) {
+    #main-logo img {
+        max-width: 30.75rem; /* Adjusts the max width for tablet-sized screens */
+    }
+}
+
+@media (max-width: 480px) {
+    #main-logo img {
+        max-width: 22.5rem; /* Adjusts the max width for mobile-sized screens */
+    }
+
+    /* Stack #main-logo and .home vertically on smaller screens */
+    #main-logo-home-container {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+#contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1.25rem;
+    text-align: center;
+}
+
+#contact h1 {
+    margin-bottom: 1.25rem;
+    font-size: 2rem; /* Responsive unit */
+}
+
+.contact-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contact-info img {
+    margin-right: 0.625rem; /* Adds space between the icon and the text */
+    width: 4rem; /* Adjust the width as needed */
+    height: 3.375rem; /* Adjust the height as needed */
+}
+
+.contact-info p {
+    margin: 0; /* Removes default margin from the paragraph */
+    font-size: 1.5rem; /* Responsive unit */
+}
+
+#services {
+    padding: 1.25rem;
+    text-align: center;
+}
+
+#services h1 {
+    margin-bottom: 1.25rem;
+    font-size: 2rem; /* Responsive unit */
+}
+
+#services h3 {
+    font-size: 1.5rem; /* Responsive unit */
+}
+
+.service-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Centers the spans horizontally */
+    gap: 1.25rem; /* Adds space between the spans */
+}
+
+.service-container span {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 12.5rem; /* Adjust width as needed */
+    padding: 0.625rem;
+    box-shadow: 0 0 0.625rem rgba(0, 0, 0, 0.1); /* Adds a subtle shadow */
+    border-radius: 0.3125rem; /* Adds rounded corners */
+    background-color: #12044a38; /* Background color for visual separation */
+}
+
+.service-container h3 {
+    margin-bottom: 0.625rem;
+}
+
+.service-container p {
+    margin: 0;
+    font-size: 1rem; /* Responsive unit */
+}
+
+@media (max-width: 1200px) {
+    h1 {
+        font-size: 2.5em;
+    }
+
+    h3 {
+        font-size: 1.8em;
+    }
+
+    p {
+        font-size: 1.2em;
+    }
+
+    .nav-links a {
+        font-size: 1.9rem;
+    }
+
+    #contact h1, #services h1 {
+        font-size: 1.8rem;
+    }
+
+    #services h3 {
+        font-size: 1.3rem;
+    }
+
+    .service-container span {
+        width: 11.25rem;
+    }
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 1.2em;
+    }
+
+    h3 {
+        font-size: 1.5em;
+    }
+
+    p {
+        font-size: 1em;
+    }
+
+    .nav-links a {
+        font-size: 1.8rem;
+    }
+
+    #contact h1, #services h1 {
+        font-size: 1.6rem;
+    }
+
+    #services h3 {
+        font-size: 1.2rem;
+    }
+
+    .service-container span {
+        width: 10rem;
+    }
+
+    /* Stack #main-logo and .home vertically on smaller screens */
+    #main-logo-home-container {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1em;
+    }
+
+    h3 {
+        font-size: 1.2em;
+    }
+
+    p {
+        font-size: 0.9em;
+    }
+
+    .nav-links a {
+        font-size: 0.7rem;
+    }
+
+    #contact h1, #services h1 {
+        font-size: 1.4rem;
+    }
+
+    #services h3 {
+        font-size: 1rem;
+    }
+
+    .service-container span {
+        width: 8.75rem;
+    }
+}
+
+@keyframes slideFadeIn {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes shiny {
+    0% {
+        filter: brightness(100%);
+    }
+    50% {
+        filter: brightness(200%);
+    }
+    100% {
+        filter: brightness(100%);
+    }
+}
+
+@keyframes typing {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes blink-caret {
+    from, to {
+        border-color: transparent;
+    }
+    50% {
+        border-color: rgb(39, 46, 106);
+    }
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
